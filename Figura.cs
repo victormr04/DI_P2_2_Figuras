@@ -9,8 +9,4 @@ internal abstract class Figura
 
   public abstract double GetArea();
 
-  public static void Main(string[]args){
-        Rectangulo r1 = new(5, 3);
-  }
-
 }
