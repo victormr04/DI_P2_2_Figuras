@@ -3,10 +3,10 @@ using System.Dynamic;
 using System.Security.Cryptography.X509Certificates;
 
 namespace P2_2_Figuras;
-abstract class Rectangulo : Figura{
-    private int _base {get;set;}
-    private int _altura { get; set;}
-    public Rectangulo(int b, int altura, Color color){
+internal class Rectangulo : Figura{
+    private double _base {get;set;}
+    private double _altura { get; set;}
+    public Rectangulo(double b, double altura, Color color){
          _base =b;
         _altura = altura;
         _color = color;
@@ -17,6 +17,11 @@ abstract class Rectangulo : Figura{
         return _base * _altura;
 
     }
+    public override string ToString()
+    {
+        return $"base: {_base} altura: {_altura} Area: {GetArea()} color: {_color}";
+    }
+
 
 
 
