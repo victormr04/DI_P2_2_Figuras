@@ -2,26 +2,35 @@
 using System.Drawing;
 
 namespace P2_2_Figuras;
- internal class Circulo : Figura{
-private double _radio {get;set;}
-public Circulo (double radio, Color color){
-    _color = color;
-    _radio = radio;
-   
-        
-}
-
-    public Circulo()
+internal class Circulo : Figura
+{
+    #region CTOR
+    //Constructor por defecto
+    public Circulo(double radio, Color color)
     {
+        Color = color;
+        Radio = radio;
+
+
     }
 
+    #endregion
+
+    #region Metodos
+    /*
+    * Método para calcular el área del triángulo.
+    *
+    * @returns El área del rectangulo como un valor double.
+    */
     public override double GetArea()
     {
-      return Math.PI * Math.Pow(_radio, 2);
+        double area = Math.Round(Math.PI * Math.Pow(Radio, 2));
+        return area;
 
     }
     public override string ToString()
     {
-        return $"Círculo de radio {_radio}, Área: {GetArea()}, Color: {_color}";
+        return $"Figura CIRCULO\nRadio: {Radio}\nColor: [A:{Color.A},R: {Color.R},G: {Color.G} ,B: {Color.B}]\nArea: {GetArea()}\n____________";
     }
+    #endregion
 }

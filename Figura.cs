@@ -5,8 +5,24 @@ namespace P2_2_Figuras;
 
 internal abstract class Figura
 {
-  protected Color _color;
 
-  public abstract double GetArea();
+    #region Propiedades
+    public Color Color { get;  set; }
 
+    public double Radio { get; internal set; }
+
+    public double Base { get; internal set; }
+
+    public double Altura { get; internal set; }
+
+    #endregion
+
+    #region Metodos
+    public abstract double GetArea();
+
+    public override string ToString()
+    {
+        return base.ToString();
+    }
+    #endregion
 }
